@@ -22,6 +22,14 @@ python main.py <port>
 ### /predict (POST)
 Returns an array of predictions given a JSON object representing independent variables. Here's a sample input:
 ```
+curl -d '[
+    {"Age": 85, "Sex": "male", "Embarked": "S"},
+    {"Age": 24, "Sex": "female", "Embarked": "C"},
+    {"Age": 3, "Sex": "male", "Embarked": "C"},
+    {"Age": 21, "Sex": "male", "Embarked": "S"}
+]' -H "Content-Type: application/json" \
+     -X POST http://localhost:9999/predict
+
 [
     {"Age": 85, "Sex": "male", "Embarked": "S"},
     {"Age": 24, "Sex": "female", "Embarked": "C"},
